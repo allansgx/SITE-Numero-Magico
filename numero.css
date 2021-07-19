@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    opacity: 0.7;
+}
+.logo{
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Comportamento do espaçamento entre caracteres de texto */
+}
+nav {
+    display: flex; /* logo e lista um do lado do outro */
+    justify-content: space-around; /* espaço ao redor - metade do espaço entre eles */
+    align-items: center;
+    font-family: system-ui,
+    -apple-system, Helvetica, Arial,
+    sans-serif;
+    background: #23232e;
+    height: 8vh; /* medida responsiva */
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    letter-spacing: 3px; /* Comportamento do espaçamento entre caracteres de texto */
+    margin-left: 32px;
+}
+
+main{
+    background: url("xbox.jpg") no-repeat
+    center center; /* referente aos eixos x e y */
+    background-size: cover; /* Caso a  resolução do monitor for maior que a img */
+    height: 92vh; /* completa o 8vh de cima -  100% da tela */
+}
+main #nada{
+    color: white;
+    opacity: 0.7;
+    font-size: 25px;
+}
+main footer{
+    color: white;
+    text-align: center;
+    font-size: 11px;
+    margin-top: 110px;
+}
+.sectionPVP{
+    color: white;
+    margin-top: 110px;
+    background: rgb(46, 48, 46);
+    margin-right: 200px;
+    margin-left: 200px;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 10px;
+    height: 250px;
+}
+.sectionPVP button{
+    height: 25px;
+    width: 120px;
+    cursor: pointer;
+    background: rgb(19, 19, 19);
+    color: white;
+}
+.sectionPVP button:hover{
+    opacity: 0.7;
+}

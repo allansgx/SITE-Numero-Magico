@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="numero.css">
+    <title>Número Mágico</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a class='logo' href="numeroMagico.html">Games</a>
+        <ul class="nav-list">
+            <li><a href="">Início</a></li>
+            <li><a href="">Ranking</a></li>
+            <li><a href="">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h1 id="nada">Início</h1>
+
+    <section class="sectionPVP">
+        <h1>Modo PVP</h1> <br>
+        <button onclick="pvp()">Player vs Player</button>
+        <button onclick="melhorDeTres()">Melhor de três</button>
+
+        <br><br><br>
+
+        <h1>Modo PVE</h1> <br>
+        <button onclick="facil()">Fácil</button>
+        <button onclick="medio()">Médio</button>
+        <button onclick="dificil()">Difícil</button>
+
+    </section>
+
+    <script>
+        function pvp()
+        {
+            var tentativas = 0
+            var player1 = prompt('Nome do Player 1: ')
+            var player2 = prompt('Nome do Player 2: ')
+            alert('Que comece os jogos!')
+            var mestre = Number(prompt(`(1 - ${player1}) - Número a ser sorteado: `))
+            
+            do{
+            var desafiante = Number(prompt(`(2 - ${player2}) - Tente adivinhar o número: `))
+            tentativas++
+
+            if(desafiante > mestre)
+            {
+                alert('Muito alto!')
+            }else
+                if(desafiante < mestre)
+                {
+                    alert('Muito baixo!')
+                }
+
+            }while(desafiante != mestre)
+            alert(`Acertou! - Total de tentativas: ${tentativas}`)
+        }
+
+        function melhorDeTres()
+        {
+            var player1 = prompt('Nome do Player 1: ')
+            var player2 = prompt('Nome do Player 2: ')
+            alert('Que comece os jogos!')
+
+            var numero = Number(prompt(`(1 - ${player1}) - Número a ser sorteado: `))
+            var desafiante = Number(prompt(`(2 - ${player2}) - Tente adivinhar o número: `))
+            var acertou1 = 0
+            var acertou2 = 0
+
+                for(i=2; i>0; i--)
+                {
+                    if(desafiante == numero){
+                        alert(`ACERTOU! - Ponto para ${player2}`)
+                        // num = 0
+                        var numero = parseInt(prompt("Digite seu novo chute"))
+                        acertou2++
+                    }else{
+                        alert(`ERROU! - Ponto para ${player1}`)
+                        acertou1++
+                        var numero = parseInt(prompt("Digite seu novo chute")) // pega a nova tentativa
+                    }
+                }
+                if(acertou2 == 2)
+                {
+                    alert(`Parabéns ${player2}, você ganhou!`)
+                }else{
+                    if(acertou1 == 2)
+                    {
+                        alert(`Parabéns ${player1}, você ganhou!`)
+                    }
+                } 
+        }
+
+        function facil()
+        {
+            alert('Você tem 5 chances! Range 1-10')
+                var numero = parseInt(Math.random * 10) + 1
+                var desafiante = Number(prompt('Tente adivinhar o número: '))
+                var acertou = 0
+
+                for(var num=4; num>0; num--)
+                {
+                    if(desafiante == numero){
+                        alert("ACERTOU!")
+                        num = 0
+                        var acertou = 1
+                    }else{
+                        alert("ERROU! Tentativas restantes: " + num)
+                        var numero = parseInt(prompt("Digite seu novo chute")) // pega a nova tentativa
+                    }
+                }
+                if(acertou == 1)
+                {
+                    alert('Parabéns, você ganhou!')
+                }else{
+                    if(num == 0){
+                        alert('Você perdeu!')
+                    }
+                }
+        }  
+
+        function medio()
+        {
+            alert('Você tem 10 chances! Range 1-50')
+                var numero = parseInt(Math.random * 50) + 1
+                var desafiante = Number(prompt('Tente adivinhar o número: '))
+                var acertou = 0
+
+                for(var num=9; num>0; num--)
+                {
+
+                    if(desafiante == numero){
+                        alert("ACERTOU!")
+                        num = 0
+                        var acertou = 1
+                    }else{
+                        alert("ERROU! Tentativas restantes: " + num)
+                        var numero = parseInt(prompt("Digite seu novo chute")) // pega a nova tentativa
+                    }
+                }
+                if(acertou == 1)
+                {
+                    alert('Parabéns, você ganhou!')
+                }else{
+                    if(num == 0){
+                        alert('Você perdeu!')
+                    }
+                }
+        }
+
+        function dificil()
+        {
+            alert('Você tem 15 chances! Range 1-100')
+                var numero = parseInt(Math.random * 100) + 1
+                var desafiante = Number(prompt('Tente adivinhar o número: '))
+                var acertou = 0
+
+                for(var num=14; num>0; num--)
+                {
+
+                    if(desafiante == numero){
+                        alert("ACERTOU!")
+                        num = 0
+                        var acertou = 1
+                    }else{
+                        alert("ERROU! Tentativas restantes: " + num)
+                        var numero = parseInt(prompt("Digite seu novo chute")) // pega a nova tentativa
+                    }
+                }
+                if(acertou == 1)
+                {
+                    alert('Parabéns, você ganhou!')
+                }else{
+                    if(num == 0){
+                        alert('Você perdeu!')
+                    }
+                }
+        }  
+
+       
+    </script>
+
+<footer>
+    © Copyright 2021 - Todos os direitos reservados - Desenvolvido por Allan S.G.
+</footer>
+
+</main>
+
+    
+
+</body>
+</html>
